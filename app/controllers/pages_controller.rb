@@ -3,4 +3,6 @@ class PagesController < ApplicationController
   end
   def about
   end
+  def team
+  end
 end
