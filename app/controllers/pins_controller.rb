@@ -6,18 +6,18 @@ class PinsController < ApplicationController
     @pins = Pin.all
   end
 
-  def show # Show Action aka Read
+  def show
   end
 
   def new
-    @pin = current_user.pins.build
+    @pin = Pin.new # current_user.pins.build did not work
   end
 
   def edit
   end
 
   def create # Create Action
-    @pin = current_user.pins.build(pin_params)
+    @pin = Pin.new(pin_params) 
 
     if @pin.save
       redirect_to @pin, notice: 'Pin was successfully created.'
