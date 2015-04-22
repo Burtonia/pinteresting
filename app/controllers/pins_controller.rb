@@ -10,28 +10,30 @@ class PinsController < ApplicationController
   end
 
   def new
-    @pin = Pin.new # current_user.pins.build did not work
+    @pin = current_user.pins.build
   end
 
   def edit
   end
 
   def create # Create Action
-    @pin = Pin.new(pin_params) 
+    @pin = current_user.pins.build(pin_params) 
 
-    if @pin.save
+    #if
+      @pin.save
       redirect_to @pin, notice: 'Pin was successfully created.'
-    else
-      render :new
-    end
+    #else
+    #  render :new
+    #end
   end
 
   def update # Update Action
-    if @pin.update(pin_params)
+    #if
+      @pin.update(pin_params)
       redirect_to @pin, notice: 'Pin was successfully updated.'
-    else
-      render :edit
-    end
+    #else
+    #  render :edit
+    #end
   end
 
   def destroy # Destroy Action
