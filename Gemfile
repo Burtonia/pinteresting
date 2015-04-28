@@ -13,7 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'devise', '~> 3.4.1'
-gem 'paperclip', github: 'thoughtbot/paperclip' # '~> 3.0' did not work
+gem 'paperclip', github: 'thoughtbot/paperclip' # '~>2.7' github: 'thoughtbot/paperclip' # '~> 3.0' did not work
 gem 'aws-sdk', '~> 2.0.39'
 gem 'masonry-rails', '~>0.2.0'
 gem 'will_paginate', '~> 3.0'
