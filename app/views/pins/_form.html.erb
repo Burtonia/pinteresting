@@ -1,5 +1,6 @@
 <!-- Handles the Error if there is one -->
-<%= form_for(@pin, html: { multipart: true }) do |f| %> <!-- purple allows for file and image upload in the form -->
+<%= form_for @pin, html: { multipart: true } do |f| %> 
+<!-- purple allows for file and image upload in the form -->
   <% if @pin.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this pin from being saved:</h2>
@@ -15,12 +16,12 @@
 <!-- Form -->
   <div class="field form-group">
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
 
   <div class="field form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: "form-control" %>
   </div>
   <div class="actions form-group">
     <%= f.submit class: "btn btn-primary" %>

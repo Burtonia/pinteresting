@@ -1,4 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+$icon-font-path: 'bootstrap/'; //necessary to enable glyphicons to be picked up
+
+@import url(www.fonts.googleapis.com/css?family=Lato:400,700);
 
 $body-bg:											#35cf76;
 $font-family-sans-serif:			'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
