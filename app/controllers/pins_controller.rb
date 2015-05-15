@@ -1,7 +1,6 @@
 class PinsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_pin, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 25)
@@ -12,8 +11,6 @@ class PinsController < ApplicationController
 
   def new
     @pin = current_user.pins.build
-    # build
-    # find_by(id: params[:id])
   end
 
   def edit
@@ -40,16 +37,16 @@ class PinsController < ApplicationController
 
   def destroy # Destroy Action
     @pin.destroy
-      redirect_to pins_url, notice: 'Pin was successfully destroyed.'
+    redirect_to pins_url, notice: 'Pin was successfully destroyed.'
   end
 
   private
 
-    def set_pin
-      @pin = Pin.find(params[:id])
-    end
+  def set_pin
+    @pin = Pin.find(params[:id])
+  end
 
-    def pin_params
-      params.require(:pin).permit(:description, :image)
-    end
+  def pin_params
+    params.require(:pin).permit(:description, :image)
+  end
 end
